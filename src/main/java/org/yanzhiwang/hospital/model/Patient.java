@@ -1,22 +1,8 @@
 package org.yanzhiwang.hospital.model;
 
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import jakarta.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
-import java.util.HashSet;
-import java.util.Set;
+import lombok.*;
+import jakarta.persistence.*;
+import java.util.*;
 
 // Reference for lombok 
 // https://www.javaguides.net/2019/03/project-lombok-getter-setter-and-constructor-example.html
@@ -59,4 +45,34 @@ public class Patient {
         @JoinTable(name = "patient_hospital", joinColumns = { @JoinColumn(name = "patient_id") }, inverseJoinColumns = {
                         @JoinColumn(name = "hospital_id") })
         private Set<Hospital> hospitals = new HashSet<Hospital>();
+
+        public void removeHospital(Hospital hospital) {
+                this.hospitals.remove(hospital);
+                hospital.getPatients().remove(hospital);
+        }
+
+        public void addHospital(Hospital hospital) {
+                this.hospitals.add(hospital);
+                hospital.getPatients().add(this);
+        }
+
+        public void removeDepartment(Department department) {
+                this.departments.remove(department);
+                department.getPatients().remove(department);
+        }
+
+        public void addDepartment(Department department) {
+                this.departments.add(department);
+                department.getPatients().add(this);
+        }
+
+        public void removeDoctor(Doctor doctor) {
+                this.doctors.remove(doctor);
+                doctor.getPatients().remove(doctor);
+        }
+
+        public void addDoctor(Doctor doctor) {
+                this.doctors.add(doctor);
+                doctor.getPatients().add(this);
+        }
 }
