@@ -11,11 +11,11 @@ public class DoctorService {
     @Autowired
     private DoctorRepository doctorRepository;
 
-    public List<Doctor> findAll() {
+    public List<Doctor> getAllDoctor() {
         return doctorRepository.findAll();
     }
 
-    public Doctor findById(Long id) {
+    public Doctor getDoctorById(Long id) {
         Optional<Doctor> doctor = doctorRepository.findById(id);
         if (doctor.isPresent()) {
             return doctor.get();

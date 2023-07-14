@@ -16,7 +16,12 @@ public class PatientService {
     }
 
     public Patient getPatientById(Long id) {
-        return patientRepository.findById(id).orElseThrow(() -> new RuntimeException("Patient not found"));
+        Optional<Patient> patient = patientRepository.findById(id);
+        if (patient.isPresent()) {
+            return patient.get();
+        } else {
+            throw new RuntimeException("Patient not found");
+        }
     }
 
     public Patient savePatient(Patient patient) {
