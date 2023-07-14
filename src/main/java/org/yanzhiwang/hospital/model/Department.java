@@ -22,5 +22,9 @@ public class Department {
 	// The inverse side is department
 	// It indicates that the relationship is mapped
 	@ManyToMany(mappedBy = "departments", cascade = { CascadeType.ALL })
-	private Set<Patient> patients = new HashSet<Patient>();
+	private Set<Patient> patients = new HashSet<Patient>(); 
+	
+	public Department(String name) {
+		this.name = name;
+	}
 }

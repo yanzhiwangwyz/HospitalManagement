@@ -46,6 +46,12 @@ public class Patient {
                         @JoinColumn(name = "hospital_id") })
         private Set<Hospital> hospitals = new HashSet<Hospital>();
 
+
+        public Patient(String name, String description) {
+                this.name = name;
+                this.description = description;
+        }
+        
         public void removeHospital(Hospital hospital) {
                 this.hospitals.remove(hospital);
                 hospital.getPatients().remove(hospital);

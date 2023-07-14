@@ -23,4 +23,8 @@ public class Hospital {
     // It indicates that the relationship is mapped
     @ManyToMany(mappedBy = "hospitals", cascade = { CascadeType.ALL })
     private Set<Patient> patients = new HashSet<Patient>();
+
+    public Hospital(String name) {
+        this.name = name;
+    }
 }
