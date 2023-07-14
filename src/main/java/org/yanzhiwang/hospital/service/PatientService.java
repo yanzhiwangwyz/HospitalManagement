@@ -24,7 +24,13 @@ public class PatientService {
     }
 
     public void deletePatientById(Long id) {
-        Patient patient = patientRepository.findById(id).orElseThrow(() -> new RuntimeException("Patient not found"));
-        patientRepository.deleteById(patient.getPatientId());
+        Optional<Patient> patient = patientRepository.findById(id);
+        if (patient.isPresent()) {
+        patientRepository.deleteById(id);
+        } else {
+        throw new RuntimeException("Patient not found");
+        }
+        // Patient patient = patientRepository.findById(id).orElseThrow(() -> new RuntimeException("Patient not found"));
+        // patientRepository.deleteById(patient.getPatientId());
     }
 }

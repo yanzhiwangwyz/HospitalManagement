@@ -24,7 +24,22 @@ public class DoctorService {
         }
     }
 
-    public Doctor save(Doctor doctor) {
+    public Doctor saveDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
+    }
+
+    public void updateDoctor(Doctor doctor) {
+        doctorRepository.save(doctor);
+    } 
+
+    public void deleteDoctorById(Long id) {
+        Optional<Doctor> doctor = doctorRepository.findById(id);
+        if (doctor.isPresent()) {
+            doctorRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Doctor not found");
+        }
+        // Doctor doctor = doctorRepository.findById(id).orElseThrow(() -> new RuntimeException("Doctor not found")); 
+        // doctorRepository.deleteById(doctor.getDoctorId());
     }
 }
