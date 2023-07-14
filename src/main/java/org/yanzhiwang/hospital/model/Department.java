@@ -1,5 +1,9 @@
 package org.yanzhiwang.hospital.model;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +16,12 @@ import jakarta.persistence.CascadeType;
 import java.util.HashSet;
 import java.util.Set;
 
+// Reference for lombok 
+// https://www.javaguides.net/2019/03/project-lombok-getter-setter-and-constructor-example.html
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "department")
 
