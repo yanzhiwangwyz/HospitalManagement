@@ -30,11 +30,11 @@ public class PatientController {
         return mav;
     }
 
-    @GetMapping("/remove-patient/{id}")
+    @GetMapping("/remove-patient-confirm/{id}")
     public ModelAndView removePatientById(@PathVariable("id") Long id) {
-        patientService.deletePatientById(id);
-        ModelAndView mav = new ModelAndView("patients_page");
-        mav.addObject("patientList", patientService.getAllPatients());
+        Patient patientObject = patientService.getPatientById(id); 
+        ModelAndView mav = new ModelAndView("patients_delete_confirmation_page"); 
+        mav.addObject("patientObject", patientObject);
         return mav;
     }
 }
