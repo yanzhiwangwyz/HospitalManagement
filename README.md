@@ -12,7 +12,7 @@
     - A department is associated with multiple patient and a patient is associated with multiple department 
     - A doctor can treat multiple patients, and a patient can consult multiple doctors 
     - A patient can be admitted to multiple hospitals, and a hospital can accommodate multiple patients 
-    - ![](./Hospital Management.png)
+    - ![](./"Hospital Management.png")
     - [dbdiagram](https://dbdiagram.io/d/64b0ac9102bd1c4a5e0db4d9)
 
 
