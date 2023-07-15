@@ -47,19 +47,21 @@
                                 </tr>
                             </table>
                         </div>
+                        <div>
+                            <a th:href="@{/remove-patient/{id}(id=${patientObject.patientId})}" class="btn btn-danger">Remove</a>
+                            <a href="/patients" class="btn btn-secondary">Cancel</a>
+                        </div>
+                        <!-- <div class="btn-group">
+                            <form th:action="@{/remove-patient/{id}(id=${patientObject.patientId})}" method="post">
+                                <input type="hidden" name="_method" value="post">
+                                <button type="submit" class="btn btn-danger" style="margin-right: 10px;">Remove</button>
+                            </form>
+                            <a href="/patients" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+                        </div> -->
                     </div>
-                    <!-- <form action="/delete-patient" method="post"> -->
-                    <div>
-                        <input type="hidden" name="patientId" value="1">
-                        <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                        <a th:href="@{/remove-patient/{id}(id=${patientObject.patientId})}" class="btn btn-danger">Remove</a>
-                        <a href="/patients" class="btn btn-secondary">Cancel</a>
-                    </div>
-                    <!-- </form> -->
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
