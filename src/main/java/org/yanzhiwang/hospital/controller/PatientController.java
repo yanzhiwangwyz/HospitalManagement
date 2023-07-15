@@ -16,15 +16,16 @@ public class PatientController {
 
     // @GetMapping("/patients")
     // public String displayAllPatients(Model model) {
-    //     List<Patient> patients = patientService.getAllPatients();
-    //     model.addAttribute("patients", patients);
-    //     return "patients";
+    //     List<Patient> patientList = patientService.getAllPatients();
+    //     model.addAttribute("patientList", patientList);
+    //     return "patients_page";
     // }
+    
     @GetMapping("/patients")
     public ModelAndView displayAllPatients() {
-    List<Patient> patients = patientService.getAllPatients();
-    ModelAndView mav = new ModelAndView("patients");
-    mav.addObject("patients", patients);
+    List<Patient> patientList = patientService.getAllPatients();
+    ModelAndView mav = new ModelAndView("patients_page");
+    mav.addObject("patientList", patientList);
     return mav;
     }
 }

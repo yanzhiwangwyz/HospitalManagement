@@ -15,10 +15,10 @@
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
-                <div th:switch="${patients}" class="container my-5">
+                <div th:switch="${patientList}" class="container my-5">
                     <p class="my-5">
-                        <a href="/add-patient" class="btn btn-primary">
-                            <i class="fas fa-user-plus ml-2"></i> Add Patient
+                        <a href="/add-patient" class="btn">
+                            <i class="fas fa-user-plus"></i> Add Patient
                         </a>
                     </p>
                     <div class="col-md-12">
@@ -27,7 +27,9 @@
                             <table class="table table-striped table-responsive-md">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Patient Name</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Gender</th>
+                                        <th scope="col">Age</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Detail</th>
                                         <th scope="col">Edit</th>
@@ -35,25 +37,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="patient : ${patients}">
+                                    <tr th:each="patient : ${patientList}">
                                         <td th:text="${patient.name}"></td>
+                                        <td th:text="${patient.gender}"></td>
+                                        <td th:text="${patient.age}"></td>
                                         <td th:text="${patient.description}"></td>
                                         <td>
-                                            <a th:href="@{/patient/{id}(id=${patient.patientId})}"
-                                                class="btn btn-primary">
-                                                <i class="fas fa-eye ml-2"></i>
+                                            <a th:href="@{/patient/{id}(id=${patient.patientId})}" class="btn">
+                                                <i class="fas fa-info-circle"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a th:href="@{/update-patient/{id}(id=${patient.patientId})}"
-                                                class="btn btn-primary">
-                                                <i class="fas fa-edit ml-2"></i>
+                                            <a th:href="@{/update-patient/{id}(id=${patient.patientId})}" class="btn">
+                                                <i class="fas fa-user-edit"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a th:href="@{/remove-patient/{id}(id=${patient.patientId})}"
-                                                class="btn btn-primary">
-                                                <i class="fas fa-user-times m-2"></i>
+                                            <a th:href="@{/remove-patient/{id}(id=${patient.patientId})}" class="btn">
+                                                <i class="fas fa-user-minus"></i>
                                             </a>
                                         </td>
                                     </tr>

@@ -19,6 +19,10 @@ public class Patient {
         private Long patientId;
         @Column(name = "name", length = 100, nullable = false, unique = true)
         private String name;
+        @Column(name = "gender", nullable = false)
+        private String gender;
+        @Column(name = "age", nullable = false)
+        private int age;
         @Column(name = "description", length = 100, nullable = false)
         private String description;
         // Reference for man-to-many relationship
@@ -47,8 +51,10 @@ public class Patient {
         private Set<Hospital> hospitals = new HashSet<Hospital>();
 
 
-        public Patient(String name, String description) {
+        public Patient(String name, String gender, int age, String description) {
                 this.name = name;
+                this.gender = gender;
+                this.age = age;
                 this.description = description;
         }
         
