@@ -28,14 +28,19 @@ public class PatientService {
         return patientRepository.save(patient);
     }
 
+    public void updatePatient(Patient patient) {
+        patientRepository.save(patient);
+    }
+
     public void deletePatientById(Long id) {
         Optional<Patient> patient = patientRepository.findById(id);
         if (patient.isPresent()) {
-        patientRepository.deleteById(id);
+            patientRepository.deleteById(id);
         } else {
-        throw new RuntimeException("Patient not found");
+            throw new RuntimeException("Patient not found");
         }
-        // Patient patient = patientRepository.findById(id).orElseThrow(() -> new RuntimeException("Patient not found"));
+        // Patient patient = patientRepository.findById(id).orElseThrow(() -> new
+        // RuntimeException("Patient not found"));
         // patientRepository.deleteById(patient.getPatientId());
     }
 }

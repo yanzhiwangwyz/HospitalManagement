@@ -29,4 +29,12 @@ public class PatientController {
         mav.addObject("patientObject", patientObject);
         return mav;
     }
+
+    @GetMapping("/remove-patient/{id}")
+    public ModelAndView removePatientById(@PathVariable("id") Long id) {
+        patientService.deletePatientById(id);
+        ModelAndView mav = new ModelAndView("patients_page");
+        mav.addObject("patientList", patientService.getAllPatients());
+        return mav;
+    }
 }
