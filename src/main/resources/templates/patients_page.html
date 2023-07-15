@@ -30,10 +30,9 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Gender</th>
                                         <th scope="col">Age</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Detail</th>
-                                        <th scope="col">Edit</th>
-                                        <th scope="col">Delete</th>
+                                        <th scope="col">Profile</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Remove</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -41,7 +40,6 @@
                                         <td th:text="${patient.name}"></td>
                                         <td th:text="${patient.gender}"></td>
                                         <td th:text="${patient.age}"></td>
-                                        <td th:text="${patient.description}"></td>
                                         <td>
                                             <a th:href="@{/patient/{id}(id=${patient.patientId})}" class="btn">
                                                 <i class="fas fa-info-circle"></i>

@@ -17,7 +17,8 @@ public class HospitalApplication {
 	@Bean
 	public CommandLineRunner initialCreate(PatientService patientService) {
 		return (args) -> {
-			Patient patient1 = new Patient("patient1", "M", 87, "Patient Description 1");
+			Patient patient1 = new Patient("patient1", "M", 87, "example1 street", "123-456-7890",
+					"Patient Description 1");
 			Doctor doctor1 = new Doctor("doctor1", "doctor description 1");
 			Department department1 = new Department("department1");
 			Hospital hospital1 = new Hospital("hospital1");
@@ -26,7 +27,8 @@ public class HospitalApplication {
 			patient1.addHospital(hospital1);
 			patientService.savePatient(patient1);
 
-			Patient patient2 = new Patient("patient2", "F", 23, "Patient Description 2");
+			Patient patient2 = new Patient("patient2", "F", 32, "example2 street", "123-456-7890",
+					"Patient Description 2");
 			Doctor doctor2 = new Doctor("doctor2", "doctor description 2");
 			Department department2 = new Department("department2");
 			Hospital hospital2 = new Hospital("hospital2");
@@ -35,7 +37,8 @@ public class HospitalApplication {
 			patient2.addHospital(hospital2);
 			patientService.savePatient(patient2);
 
-			Patient patient3 = new Patient("patient3", "M", 45, "Patient Description 3");
+			Patient patient3 = new Patient("patient3", "M", 45, "example3 street", "123-456-7890",
+					"Patient Description 3");
 			Doctor doctor3 = new Doctor("doctor3", "doctor description 3");
 			Department department3 = new Department("department3");
 			Hospital hospital3 = new Hospital("hospital3");

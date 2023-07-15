@@ -23,6 +23,10 @@ public class Patient {
         private String gender;
         @Column(name = "age", nullable = false)
         private int age;
+        @Column(name = "address", nullable = false)
+        private String address;
+        @Column(name = "contact", nullable = false)
+        private String contact;
         @Column(name = "description", length = 100, nullable = false)
         private String description;
         // Reference for man-to-many relationship
@@ -51,10 +55,12 @@ public class Patient {
         private Set<Hospital> hospitals = new HashSet<Hospital>();
 
 
-        public Patient(String name, String gender, int age, String description) {
+        public Patient(String name, String gender, int age, String address, String contact, String description) {
                 this.name = name;
                 this.gender = gender;
                 this.age = age;
+                this.address = address;
+                this.contact = contact;
                 this.description = description;
         }
         
