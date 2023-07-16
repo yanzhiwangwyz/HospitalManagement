@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.*;
 
 @Controller
-public class PatientController {
+public class patientController {
     @Autowired
     private PatientService patientService;
     @Autowired
