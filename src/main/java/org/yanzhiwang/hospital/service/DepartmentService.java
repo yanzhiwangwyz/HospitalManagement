@@ -24,7 +24,7 @@ public class DepartmentService {
         }
     }
 
-    public Department saveDepartment(Department department) {
+    public Department addDepartment(Department department) {
         return departmentRepository.save(department);
     }
 

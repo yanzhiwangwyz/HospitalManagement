@@ -48,7 +48,7 @@
     <div class="container my-2">
         <div class="card">
             <div class="card-body">
-                <form action="#" th:action="@{/save-update/{id}(id=${patientObject.patientId})}"
+                <form action="#" th:action="@{/save-patient-update/{id}(id=${patientObject.patientId})}"
                     th:object="${patientObject}" method="post">
                     <div class="row">
                         <div class="form-group col-md-6">

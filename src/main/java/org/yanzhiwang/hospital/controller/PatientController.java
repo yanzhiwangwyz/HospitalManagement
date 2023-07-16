@@ -72,7 +72,7 @@ public class PatientController {
         return mav;
     }
 
-    @PostMapping("/save-update/{id}")
+    @PostMapping("/save-patient-update/{id}")
     public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient updatedPatient) {
         // Get the existing patient by ID
         Patient existingPatient = patientService.getPatientById(id);
@@ -100,9 +100,8 @@ public class PatientController {
     }
 
     @GetMapping("/register-patient")
-    public ModelAndView registerPatient(Patient patient) {
+    public ModelAndView registerPatient(Patient patientObject) {
         ModelAndView mav = new ModelAndView("patientRegisterPage");
-        Patient patientObject = new Patient();
         mav.addObject("patientObject", patientObject);
         mav.addObject("doctorList", doctorService.getAllDoctors());
         mav.addObject("departmentList", departmentService.getAllDepartments());
