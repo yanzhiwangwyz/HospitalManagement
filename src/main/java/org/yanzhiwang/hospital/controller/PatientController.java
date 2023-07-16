@@ -72,15 +72,6 @@ public class PatientController {
         return mav;
     }
 
-    // @PostMapping("/save-update/{id}")
-    // public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient
-    // patientObject) {
-    // patientService.updatePatient(patientObject);
-    // ModelAndView mav = new ModelAndView("patientsPage");
-    // mav.addObject("patientList", patientService.getAllPatients());
-    // return mav;
-    // }
-
     @PostMapping("/save-update/{id}")
     public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient updatedPatient) {
         // Get the existing patient by ID
@@ -99,7 +90,30 @@ public class PatientController {
 
         // Save the updated patient
         patientService.updatePatient(existingPatient);
+        // If use patientService.updatePatient(updatedPatient), it display two patients
+        // with the same name in the patientsPage
+        // patientService.updatePatient(updatedPatient);
 
+        ModelAndView mav = new ModelAndView("patientsPage");
+        mav.addObject("patientList", patientService.getAllPatients());
+        return mav;
+    }
+
+    @GetMapping("/register-patient")
+    public ModelAndView registerPatient(Patient patient) {
+        ModelAndView mav = new ModelAndView("patientAddPage");
+        Patient patientObject = new Patient();
+        mav.addObject("patientObject", patientObject);
+        mav.addObject("doctorList", doctorService.getAllDoctors());
+        mav.addObject("departmentList", departmentService.getAllDepartments());
+        mav.addObject("hospitalList", hospitalService.getAllHospitals());
+        return mav;
+    }
+
+    // save register
+    @PostMapping("/save-register")
+    public ModelAndView saveRegister(Patient patient) {
+        patientService.registerPatient(patient);
         ModelAndView mav = new ModelAndView("patientsPage");
         mav.addObject("patientList", patientService.getAllPatients());
         return mav;
