@@ -69,5 +69,13 @@ public class doctorController {
         ModelAndView mav = new ModelAndView("doctorAddPage");
         mav.addObject("doctorObject", doctorObject);
         return mav;
+    } 
+
+    @PostMapping("/save-add-doctor") 
+    public ModelAndView saveAddDoctor(Doctor doctorObject) {
+        doctorService.addDoctor(doctorObject);
+        ModelAndView mav = new ModelAndView("doctorsPage");
+        mav.addObject("doctorList", doctorService.getAllDoctors());
+        return mav;
     }
 }

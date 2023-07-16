@@ -69,8 +69,8 @@ public class departmentController {
     }
 
     @PostMapping("/save-add-department")
-    public ModelAndView saveDepartment(Department department) {
-        departmentService.addDepartment(department);
+    public ModelAndView saveDepartment(Department departmentObject) {
+        departmentService.addDepartment(departmentObject);
         ModelAndView mav = new ModelAndView("departmentsPage");
         mav.addObject("departmentList", departmentService.getAllDepartments());
         return mav;

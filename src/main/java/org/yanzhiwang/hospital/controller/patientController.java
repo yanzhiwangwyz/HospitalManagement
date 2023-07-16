@@ -109,7 +109,6 @@ public class patientController {
         return mav;
     }
 
-    // save register
     @PostMapping("/save-register")
     public ModelAndView saveRegister(Patient patient) {
         patientService.registerPatient(patient);

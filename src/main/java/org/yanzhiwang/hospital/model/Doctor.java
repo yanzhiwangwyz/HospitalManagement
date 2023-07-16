@@ -19,8 +19,6 @@ public class Doctor {
 	private Long doctorId;
 	@Column(name = "name", length = 100, nullable = false)
 	private String name;
-	@Column(name = "description", length = 100, nullable = false)
-	private String description;
 	// The inverse side is doctor
 	// It indicates that the relationship is mapped
 	@ManyToMany(mappedBy = "doctors", cascade = { CascadeType.ALL })
@@ -28,6 +26,5 @@ public class Doctor {
 
 	public Doctor(String name, String description) {
 		this.name = name;
-		this.description = description;
 	}
 }

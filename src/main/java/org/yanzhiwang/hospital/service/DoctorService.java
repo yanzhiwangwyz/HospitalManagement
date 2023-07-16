@@ -24,7 +24,7 @@ public class DoctorService {
         }
     }
 
-    public Doctor saveDoctor(Doctor doctor) {
+    public Doctor addDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
     }
 
