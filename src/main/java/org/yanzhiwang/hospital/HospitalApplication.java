@@ -25,7 +25,7 @@ public class HospitalApplication {
 			patient1.addDoctor(doctor1);
 			patient1.addDepartment(department1);
 			patient1.addHospital(hospital1);
-			patientService.savePatient(patient1);
+			patientService.registerPatient(patient1);
 
 			Patient patient2 = new Patient("patient2", "F", 32, "example2 street", "123-456-7890",
 					"Patient Description 2");
@@ -35,7 +35,7 @@ public class HospitalApplication {
 			patient2.addDoctor(doctor2);
 			patient2.addDepartment(department2);
 			patient2.addHospital(hospital2);
-			patientService.savePatient(patient2);
+			patientService.registerPatient(patient2);
 
 			Patient patient3 = new Patient("patient3", "M", 45, "example3 street", "123-456-7890",
 					"Patient Description 3");
@@ -45,7 +45,7 @@ public class HospitalApplication {
 			patient3.addDoctor(doctor3);
 			patient3.addDepartment(department3);
 			patient3.addHospital(hospital3);
-			patientService.savePatient(patient3);
+			patientService.registerPatient(patient3);
 		};
 	}
 }

@@ -17,7 +17,7 @@ public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long doctorId;
-	@Column(name = "name", length = 100, nullable = false, unique = true)
+	@Column(name = "name", length = 100, nullable = false)
 	private String name;
 	@Column(name = "description", length = 100, nullable = false)
 	private String description;

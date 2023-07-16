@@ -17,7 +17,7 @@ public class Hospital {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long hospitalId;
-    @Column(name = "name", length = 100, nullable = false, unique = true)
+    @Column(name = "name", length = 100, nullable = false)
     private String name;
     // The inverse side is hospital
     // It indicates that the relationship is mapped

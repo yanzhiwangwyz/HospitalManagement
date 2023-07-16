@@ -17,7 +17,7 @@ public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long departmentId;
-	@Column(name = "name", length = 100, nullable = false, unique = true)
+	@Column(name = "name", length = 100, nullable = false)
 	private String name;
 	// The inverse side is department
 	// It indicates that the relationship is mapped

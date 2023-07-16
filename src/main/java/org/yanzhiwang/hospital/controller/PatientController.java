@@ -74,7 +74,7 @@ public class PatientController {
 
     @PostMapping("/save-update/{id}")
     public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient patientObject) {
-        patientService.savePatient(patientObject);
+        patientService.updatePatient(patientObject);
         ModelAndView mav = new ModelAndView("patientsPage");
         mav.addObject("patientList", patientService.getAllPatients());
         return mav;
