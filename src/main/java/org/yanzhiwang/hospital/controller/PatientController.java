@@ -72,9 +72,34 @@ public class PatientController {
         return mav;
     }
 
+    // @PostMapping("/save-update/{id}")
+    // public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient
+    // patientObject) {
+    // patientService.updatePatient(patientObject);
+    // ModelAndView mav = new ModelAndView("patientsPage");
+    // mav.addObject("patientList", patientService.getAllPatients());
+    // return mav;
+    // }
+
     @PostMapping("/save-update/{id}")
-    public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient patientObject) {
-        patientService.updatePatient(patientObject);
+    public ModelAndView saveUpdate(@PathVariable("id") Long id, Patient updatedPatient) {
+        // Get the existing patient by ID
+        Patient existingPatient = patientService.getPatientById(id);
+
+        // Update the fields of the existing patient with the new values
+        existingPatient.setName(updatedPatient.getName());
+        existingPatient.setGender(updatedPatient.getGender());
+        existingPatient.setAge(updatedPatient.getAge());
+        existingPatient.setAddress(updatedPatient.getAddress());
+        existingPatient.setContact(updatedPatient.getContact());
+        existingPatient.setDescription(updatedPatient.getDescription());
+        existingPatient.setDoctors(updatedPatient.getDoctors());
+        existingPatient.setDepartments(updatedPatient.getDepartments());
+        existingPatient.setHospitals(updatedPatient.getHospitals());
+
+        // Save the updated patient
+        patientService.updatePatient(existingPatient);
+
         ModelAndView mav = new ModelAndView("patientsPage");
         mav.addObject("patientList", patientService.getAllPatients());
         return mav;
