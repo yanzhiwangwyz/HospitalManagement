@@ -16,7 +16,7 @@ public class doctorController {
     @Autowired
     private DoctorService doctorService;
 
-    @GetMapping("/doctors") 
+    @GetMapping("/doctors")
     public ModelAndView displayAllDoctors() {
         List<Doctor> doctorList = doctorService.getAllDoctors();
         ModelAndView mav = new ModelAndView("doctorsPage");
@@ -24,6 +24,21 @@ public class doctorController {
         return mav;
     }
 
+    @GetMapping("/remove-doctor-confirm/{id}")
+    public ModelAndView removeDoctorConfirm(@PathVariable("id") Long id) {
+        Doctor doctorObject = doctorService.getDoctorById(id);
+        ModelAndView mav = new ModelAndView("doctorDeleteConfirmationPage");
+        mav.addObject("doctorObject", doctorObject);
+        return mav;
+    }
 
+    @GetMapping("/remove-doctor/{id}")
+    public ModelAndView removeDoctor(@PathVariable("id") Long id) {
+        doctorService.deleteDoctorById(id);
+        ModelAndView mav = new ModelAndView("doctorsPage");
+        mav.addObject("doctorList", doctorService.getAllDoctors());
+        return mav;
+    } 
+
+    
 }
-
