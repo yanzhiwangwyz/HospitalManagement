@@ -12,7 +12,7 @@
 
 <body>
     <div th:insert="fragments/header :: header"></div>
-     <div class="card">
+    <div class="card">
         <div class="card-body">
             <div th:switch="${patientObject}" class="container my-5">
                 <div class="col-md-12">
@@ -45,7 +45,10 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
+    <div class="back-btn text-center">
+        <a href="/patients" class="btn">View All Patients</a>
+    </div>
 </body>
 
 </html>

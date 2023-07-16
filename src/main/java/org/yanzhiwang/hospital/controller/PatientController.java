@@ -101,7 +101,7 @@ public class PatientController {
 
     @GetMapping("/register-patient")
     public ModelAndView registerPatient(Patient patient) {
-        ModelAndView mav = new ModelAndView("patientAddPage");
+        ModelAndView mav = new ModelAndView("patientRegisterPage");
         Patient patientObject = new Patient();
         mav.addObject("patientObject", patientObject);
         mav.addObject("doctorList", doctorService.getAllDoctors());
