@@ -54,7 +54,6 @@ public class Patient {
                         @JoinColumn(name = "hospital_id") })
         private Set<Hospital> hospitals = new HashSet<Hospital>();
 
-
         public Patient(String name, String gender, int age, String address, String contact, String description) {
                 this.name = name;
                 this.gender = gender;
@@ -62,35 +61,5 @@ public class Patient {
                 this.address = address;
                 this.contact = contact;
                 this.description = description;
-        }
-        
-        public void removeHospital(Hospital hospital) {
-                this.hospitals.remove(hospital);
-                hospital.getPatients().remove(hospital);
-        }
-
-        public void addHospital(Hospital hospital) {
-                this.hospitals.add(hospital);
-                hospital.getPatients().add(this);
-        }
-
-        public void removeDepartment(Department department) {
-                this.departments.remove(department);
-                department.getPatients().remove(department);
-        }
-
-        public void addDepartment(Department department) {
-                this.departments.add(department);
-                department.getPatients().add(this);
-        }
-
-        public void removeDoctor(Doctor doctor) {
-                this.doctors.remove(doctor);
-                doctor.getPatients().remove(doctor);
-        }
-
-        public void addDoctor(Doctor doctor) {
-                this.doctors.add(doctor);
-                doctor.getPatients().add(this);
         }
 }
