@@ -12,7 +12,7 @@ import org.yanzhiwang.hospital.service.DepartmentService;
 import java.util.*;
 
 @Controller
-public class departmentController {
+public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
