@@ -29,6 +29,31 @@
         .add-btn {
             background-color: #ffffff;
             color: #000000;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border: none;
+        }
+
+        .add-btn:hover {
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+
+        .cancel-btn {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 8px 16px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cancel-btn:hover {
+            background-color: #f0f0f0;
+            color: #000000;
         }
     </style>
 </head>
@@ -99,7 +124,7 @@
                         </div>
                         <div class="submit-btn col-md-12">
                             <button type="submit" class="btn add-btn">Register</button>
-                            <a href="/patients" class="btn cancel-btn">Cancel</a>
+                            <a href="/patients" class="btn cancel-btn" style="border: none;">Cancel</a>
                         </div>
                     </div>
                 </form>

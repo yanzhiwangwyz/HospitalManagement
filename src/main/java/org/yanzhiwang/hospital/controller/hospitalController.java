@@ -60,4 +60,20 @@ public class hospitalController {
         mav.addObject("hospitalList", hospitalService.getAllHospitals());
         return mav;
     }
+
+    @GetMapping("/add-hospital")
+    public ModelAndView addHospital(Hospital hospitalObject) {
+        ModelAndView mav = new ModelAndView("hospitalAddPage");
+        mav.addObject("hospitalObject", hospitalObject);
+        return mav;
+    }
+
+    @PostMapping("/save-add-hospital")
+    public ModelAndView saveAddHospital(Hospital hospitalObject) {
+        hospitalService.addHospital(hospitalObject);
+        ModelAndView mav = new ModelAndView("hospitalsPage");
+        mav.addObject("hospitalList", hospitalService.getAllHospitals());
+        return mav;
+    }
 }
+

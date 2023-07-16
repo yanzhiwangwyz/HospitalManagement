@@ -29,14 +29,29 @@
         .update-btn {
             background-color: #ffffff;
             color: #000000;
-            border: 1px solid #000000;
             padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border: none;
+        }
+
+        .update-btn:hover {
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+
+        .cancel-btn {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .update-btn:hover {
+        .cancel-btn:hover {
             background-color: #f0f0f0;
             color: #000000;
         }
@@ -109,7 +124,7 @@
                                 placeholder="Description" required></textarea>
                         </div>
                         <div class="submit-btn col-md-12">
-                            <button type="submit" class="btn update-btn" style="border: none;">Update</button>
+                            <button type="submit" class="btn update-btn">Update</button>
                             <a href="/patients" class="btn cancel-btn">Cancel</a>
                         </div>
                     </div>

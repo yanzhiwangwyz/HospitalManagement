@@ -24,7 +24,7 @@ public class HospitalService {
         }
     }
 
-    public Hospital saveHospital(Hospital hospital) {
+    public Hospital addHospital(Hospital hospital) {
         return hospitalRepository.save(hospital);
     }
 
