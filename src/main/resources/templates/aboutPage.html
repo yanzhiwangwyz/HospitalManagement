@@ -9,245 +9,193 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        .navbar {
-            background-color: #f0f0f0;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 20px;
+        h2, h3 {
+            margin-top: 30px;
         }
 
-        .navbar-nav a {
-            text-decoration: none;
-            color: #000000;
-            padding: 10px;
+        table {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        .header {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-            margin-top: 100px;
-            margin-left: 200px;
-        }
-
-        .header-title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .header-subtitle {
-            font-size: 24px;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .card-title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            background-color: transparent;
-            color: #000000;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-
-        .resume-section {
-            margin-bottom: 40px;
-        }
-
-        .resume-section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .resume-item {
+        th,
+        td {
+            padding: 8px;
             text-align: left;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .resume-item-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .resume-item-description {
-            font-size: 16px;
+        th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-            </li>
-        </ul>
-    </nav>
+    <div th:insert="fragments/sidebar"></div>
 
-    <div class="header">
-        <div class="container">
-            <h2 class="header-title">YANZHI WANG</h2>
-            <p class="header-subtitle">Arlington, TX | (682) 259-6316 | yxw7416@mavs.uta.edu </p>
-            <p class="header-subtitle">Authorized to work in the United States (EAD for pending Green Card Application)</p>
-        </div>
+    <div style="padding-left: 200px;">
+        <h2>YANZHI WANG</h2>
+        <p>Arlington, TX | (682) 259-6316 | yxw7416@mavs.uta.edu</p>
+        <p>Authorized to work in the United States (EAD for pending Green Card Application)</p>
 
-        <div class="container resume-section">
-            <h4 class="resume-section-title">TECHNICAL SKILLS</h4>
-            <div class="resume-item">
-                <p class="resume-item-description">
-                    Programming languages: Python (pandas, numpy, matplotlib, seaborn, sklearn, tensorflow, keras), Java (Spring, Hibernate, Maven), C , SQL, JavaScript, Rust
-                </p>
-            </div>
-        </div>
+        <h3>TECHNICAL SKILLS</h3>
+        <table>
+            <tr>
+                <td>Programming languages:</td>
+                
+                <td>Python (pandas, numpy, matplotlib, seaborn, sklearn, tensorflow, keras), Java (Spring, Hibernate, Maven),
+                    C, SQL, JavaScript, Rust</td>
+            </tr>
+        </table>
 
-        <div class="container resume-section">
-            <h4 class="resume-section-title">EDUCATION</h4>
-            <div class="resume-item">
-                <p class="resume-item-title">Full Stack Java Developer Program (Remote)</p>
-                <p class="resume-item-description">May 2023 – August 2023<br>
-                    Participating full stack development course, which focused on Java-associated tools and frameworks
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">The University of Texas at Arlington</p>
-                <p class="resume-item-description">Dec. 2022<br>
-                    Master of Computer Science<br>
-                    Specialty Areas: Data Science and Software Engineering<br>
-                    GPA – 3.64
-                </p>
-                <p class="resume-item-title">University of Oklahoma</p>
-                <p class="resume-item-description">May 2016<br>
-                    Regional and Urban Planning<br>
-                    Specialty Areas: Geographic Information System<br>
-                    GPA – 3.27
-                </p>
-            </div>
-        </div>
+        <h3>EDUCATION</h3>
+        <table>
+            <tr>
+                <td>Full Stack Java Developer Program (Remote)</td>
+                <td>May 2023 – August 2023</td>
+            </tr>
+            <tr>
+                <td>The University of Texas at Arlington</td>
+                <td>Dec. 2022</td>
+            </tr>
+            <tr>
+                <td>University of Oklahoma</td>
+                <td>May 2016</td>
+            </tr>
+        </table>
 
-        <div class="container resume-section">
-            <h4 class="resume-section-title">UNIVERSITY PROJECT</h4>
-            <div class="resume-item">
-                <p class="resume-item-title">File Sharing System | Socket Programming in JAVA</p>
-                <p class="resume-item-description">
-                    Jan. 2022 – May 2022<br>
-                    - Developed a client-server file sync system using Java, allowing multiple clients to sync files with a central server<br>
-                    - Implemented a TCP connection for communication and designed a multi-threaded architecture<br>
-                    
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">Database Systems | Oracle SQL</p>
-                <p class="resume-item-description">
-                    Sept. 2021 – Dec. 2021<br>
-                    - Analyzed the IMDb database containing millions of rows of International Movies and TV episodes information<br>
-                    - Utilized aggregate functions to calculate counts, averages, and other statistical measures<br>
-                    - Implemented filtering such as the LIKE operator to extract relevant data based on genres, years, and other criteria<br>
-                    - Explored the relationships between tables and used JOIN operations to retrieve data from multiple tables<br>
-                    
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">Word Checking System | Socket Programming in PYTHON</p>
-                <p class="resume-item-description">
-                    Jan. 2021 – May 2021<br>
-                    - Created a client-server system for checking word spelling using Python socket programming<br>
-                    - Developed a GUI-based application that allows clients to send text files to the server for word modification<br>
-                    - Designed UDP connection for sending and receiving files and designed a multi-threaded architecture<br>
-                    - Utilized automatic file detection and handling mechanism for file updates and deletions<br>
-                    
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">Task Management Application | Android Software Development</p>
-                <p class="resume-item-description">
-                    Jan. 2021 – May 2021<br>
-                    - A task management Android app that is designed to allow users to create, delegate, and track tasks in a group<br>
-                    - Implemented an intuitive user interface (UI) design, providing users with an intuitive and seamless experience<br>
-                    - Utilized Android Studio as the development tools and frameworks to build the application<br>
-                    <br>
-                    
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">Data Structure and Algorithm in JAVA</p>
-                <p class="resume-item-description">
-                    Sept. 2020 – Dec. 2020<br>
-                    - A stable matching between an equal sized group of advisors and students<br>
-                     <br>
-                    - Use Prim’s Algorithm to find Minimum Spanning Tree<br>
-                     <br>
-                    - Use dynamic programming to find the path with the smallest travel time subject to a limited amount of fuel. Use dynamic programming to determine the maximum attack damage<br>
-                    
-                </p>
-            </div>
-        </div>
+        <h3>UNIVERSITY PROJECT</h3>
+        <table>
+            <tr>
+                <td>File Sharing System | Socket Programming in JAVA</td>
+                <td>Jan. 2022 – May 2022</td>
+            </tr>
+            <tr>
+                <td>Developed a client-server file sync system using Java, allowing multiple clients to sync files with a central server</td>
+                
+                <td>Implemented a TCP connection for communication and designed a multi-threaded architecture</td>
+            </tr>
+            <tr>
+                <td>Database Systems | Oracle SQL</td>
+                <td>Sept. 2021 – Dec. 2021</td>
+            </tr>
+            <tr>
+                <td>Analyzed the IMDb database containing millions of rows of International Movies and TV episodes information</td>
+                
+                <td>Utilized aggregate functions to calculate counts, averages, and other statistical measures</td>
+                
+                <td>Implemented filtering such as the LIKE operator to extract relevant data based on genres, years, and other criteria</td>
+                
+                <td>Explored the relationships between tables and used JOIN operations to retrieve data from multiple tables</td>
+            </tr>
+            <tr>
+                <td>Word Checking System | Socket Programming in PYTHON</td>
+                <td>Jan. 2021 – May 2021</td>
+            </tr>
+            <tr>
+                <td>Created a client-server system for checking word spelling using Python socket programming</td>
+                
+                <td>Developed a GUI-based application that allows clients to send text files to the server for word modification</td>
+                
+                <td>Designed UDP connection for sending and receiving files and designed a multi-threaded architecture</td>
+                
+                <td>Utilized automatic file detection and handling mechanism for file updates and deletions</td>
+            </tr>
+            <tr>
+                <td>Task Management Application | Android Software Development</td>
+                <td>Jan. 2021 – May 2021</td>
+            </tr>
+            <tr>
+                <td>A task management Android app that is designed to allow users to create, delegate, and track tasks in a group</td>
+                
+                <td>Implemented an intuitive user interface (UI) design, providing users with an intuitive and seamless experience</td>
+                
+                <td>Utilized Android Studio as the development tools and frameworks to build the application</td>
+                
+                <td>Created a demo video showcasing the software features and functionality</td>
+            </tr>
+            <tr>
+                <td>Data Structure and Algorithm in JAVA</td>
+                <td>Sept. 2020 – Dec. 2020</td>
+            </tr>
+            <tr>
+                <td>A stable matching between an equal sized group of advisors and students</td>
+                
+                <td>Use Prim’s Algorithm to find Minimum Spanning Tree</td>
+                
+                <td>Use dynamic programming to find the path with the smallest travel time subject to limited amount of fuel.
+                    Use dynamic programming to determine the maximum attack damage</td>
+                <td></td>
+            </tr>
+        </table>
 
-        <div class="container resume-section">
-            <h4 class="resume-section-title">COURSEWORK</h4>
-            <p class="resume-item-description">
-                Data Analysis & Modeling Techniques  | Computer Networks  | Software Engineering: Analysis, Design, Testing <br>
-                Software Engineering: Management, Maintenance, QA  | Data Mining  | Database Systems <br>
-                Python Programming 
-            </p>
-        </div>
+        <h3>COURSEWORK</h3>
+        <table>
+            <tr>
+                <td>Data Analysis & Modeling Techniques</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Distributed Systems</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Computer Networks</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Software Engineering: Analysis, Design, Testing</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Software Engineering: Management, Maintenance, QA</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Data Mining</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Database Systems</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Python Programming</td>
+                <td></td>
+            </tr>
+        </table>
 
-        <div class="container resume-section">
-            <h4 class="resume-section-title">WORK EXPERIENCE</h4>
-            <div class="resume-item">
-                <p class="resume-item-title">Urban Planner (Full-Time)</p>
-                <p class="resume-item-description">
-                    Chengdu Institute of Planning & Design<br>
-                    Aug. 2016 – Oct. 2018<br>
-                    - Conducted data analysis and mapping using GIS software to analyze demographic data<br>
-                    - Collaborated with coworkers and government officials to develop comprehensive plans for the city of Chengdu
-                </p>
-            </div>
-            <div class="resume-item">
-                <p class="resume-item-title">Urban Planner Assistant (Internship)</p>
-                <p class="resume-item-description">
-                    Integra Realty Resources Oklahoma City, OK<br>
-                    May 2015 – July 2015<br>
-                    - Assisted in the development of affordable housing, which involved conducting research on the existing housing stock and the future housing needs for 5 Counties in Oklahoma
-                </p>
-            </div>
-        </div>
+        <h3>WORK EXPERIENCE</h3>
+        <table>
+            <tr>
+                <td>Urban Planner (Full-Time)</td>
+                <td>Aug. 2016 – Oct. 2018</td>
+            </tr>
+            <tr>
+                <td>Chengdu Institute of Planning & Design</td>
+                <td>Chengdu, China</td>
+            </tr>
+            <tr>
+                <td>Conducted data analysis and mapping using GIS software to analyze demographic data</td>
+                <td>Collaborated with coworkers and government officials to develop comprehensive plans for the city of Chengdu</td>
+            </tr>
+            <tr>
+                <td>Urban Planner Assistant (Internship)</td>
+                <td>May 2015 – July 2015</td>
+            </tr>
+            <tr>
+                <td>Integra Realty Resources</td>
+                <td>Oklahoma City, OK</td>
+            </tr>
+            <tr>
+                <td>Assisted in the development of affordable housing by conducting research on existing housing stock and future housing needs for 5 Counties in Oklahoma</td>
+                <td></td>
+            </tr>
+        </table>
     </div>
 </body>
 
 </html>
-
-
-
-
