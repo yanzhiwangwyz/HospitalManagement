@@ -16,17 +16,17 @@ COPY src ./src
 # Build the application
 RUN mvn package -DskipTests
 
-# Use the OpenJDK 17 Alpine image as the base image for the final container
-FROM openjdk:17-jdk-alpine
+# Use the Eclipse Temurin JDK 17 Alpine image as the base image for the final container
+FROM eclipse-temurin:17-jdk-alpine
 
 # Set the working directory in the final container
 WORKDIR /app
 
 # Copy the built JAR file from the build environment
-COPY --from=build /app/target/hospital-0.0.1-SNAPSHOT.jar .
+COPY --from=build /app/target/hospital-0.0.1-SNAPSHOT.jar ./app.jar
 
 # Expose the port on which your Spring Boot application listens
 EXPOSE 8080
 
 # Set the command to run your application
-CMD ["java", "-jar", "hospital-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
