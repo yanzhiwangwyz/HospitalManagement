@@ -1,25 +1,25 @@
-# Use a Java base image
-FROM adoptopenjdk:17-jdk AS build
+# Use the official Maven image as the build environment
+FROM maven:3.8.4-openjdk-17-slim AS build
 
-# Set the working directory
+# Set the working directory in the build environment
 WORKDIR /app
 
-# Copy the Maven configuration files
+# Copy the pom.xml file to the build environment
 COPY pom.xml .
 
-# Download the dependencies
+# Download the project dependencies
 RUN mvn dependency:go-offline -B
 
-# Copy the source code
+# Copy the source code to the build environment
 COPY src ./src
 
 # Build the application
 RUN mvn package -DskipTests
 
-# Create a new Docker image with only the JRE
-FROM adoptopenjdk:17-jre
+# Use the OpenJDK 17 Alpine image as the base image for the final container
+FROM openjdk:17-jdk-alpine
 
-# Set the working directory
+# Set the working directory in the final container
 WORKDIR /app
 
 # Copy the built JAR file from the build environment
