@@ -16,8 +16,8 @@ COPY src ./src
 # Build the application
 RUN mvn package -DskipTests
 
-# Use a slim Java image as the base image for the final container
-FROM adoptopenjdk/openjdk17:alpine-jre
+# Use the OpenJDK 17 Alpine image as the base image for the final container
+FROM openjdk:17-jdk-alpine
 
 # Set the working directory in the final container
 WORKDIR /app
