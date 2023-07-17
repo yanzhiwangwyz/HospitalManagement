@@ -8,5 +8,15 @@ public class IndexController {
     @GetMapping("/")
     public String displayIndexPage() {
         return "indexPage";
+    } 
+
+    @GetMapping("/about")
+    public String displayAboutPage() {
+        return "aboutPage";
+    } 
+
+    @GetMapping("/contact")
+    public String displayContactPage() {
+        return "contactPage";
     }
 }
