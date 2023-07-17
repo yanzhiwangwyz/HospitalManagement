@@ -30,7 +30,7 @@ java -jar hospital-0.0.1-SNAPSHOT.jar
 docker build -t project .
 ```
 ```
-docker run -p 8080:8080 
+docker run -p 8080:8080 project 
 ```
 
 
