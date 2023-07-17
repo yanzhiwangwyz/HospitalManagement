@@ -13,7 +13,25 @@
     - A doctor can treat multiple patients, and a patient can consult multiple doctors 
     - A patient can be admitted to multiple hospitals, and a hospital can accommodate multiple patients 
     - ![](./HospitalManagement.png)
-    - [dbdiagram](https://dbdiagram.io/d/64b0ac9102bd1c4a5e0db4d9)
+    - [dbdiagram](https://dbdiagram.io/d/64b0ac9102bd1c4a5e0db4d9) 
+## Deploy in local 
+- Go to directory where you have pom.xml
+```
+mvn clean package
+```
+- Go to target directory where you have JAR file 
+```
+java -jar hospital-0.0.1-SNAPSHOT.jar 
+``` 
+- This will start the embedded servlet container and deploy your Spring Boot application 
+- Open localhost:8080 
+## Deploy with Docker 
+```
+docker build -t project .
+```
+```
+docker run -p 8080:8080 
+```
 
 
 
