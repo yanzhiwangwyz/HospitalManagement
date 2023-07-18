@@ -36,7 +36,9 @@ docker build -t project .
 docker run -p 8080:8080 project 
 ```
 ## Deploy on Render 
-[Hospital Management Project](https://project-6b4i.onrender.com/)
+[Hospital Management Project](https://project-6b4i.onrender.com/) 
+## Deploy on Heroku 
+[Hospital Management Project](https://hospitalmanagement-71ff36e57089.herokuapp.com/) 
 
 
 
