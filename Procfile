@@ -1,1 +1,1 @@
-web: java -jar hospital-0.0.1-SNAPSHOT.jar $PORT
+web: java -Dserver.port=$PORT -jar target/hospital-0.0.1-SNAPSHOT.jar
