@@ -33,7 +33,7 @@ docker build -t project .
 docker run -p 8080:8080 project 
 ```
 ## Deploy on Render 
-![](https://project-6b4i.onrender.com/)
+[Hospital Management Project](https://project-6b4i.onrender.com/)
 
 
 
