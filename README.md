@@ -27,7 +27,7 @@ java -jar hospital-0.0.1-SNAPSHOT.jar
 - Open localhost:8080
 > Reference
 
-> [Change to Java version 17](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-java-project-for-codespaces)
+> - [Change environment to Java version 17](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-java-project-for-codespaces)
 ## Deploy with Docker 
 ```
 docker build -t project .
