@@ -37,7 +37,7 @@ docker run -p 8080:8080 project
 ```
 ## Deploy on Render 
 - Add `Dockerfile` to specify environment, specify working directory, and build the application using Maven 
-- [Hospital Management Project](https://project-6b4i.onrender.com/) 
+- [Hospital Management Project](https://hospitalmanagement-wpli.onrender.com/) 
 ## Deploy on Heroku 
 - Add `Dockerfile` to specify environment, specify working directory, and build the application using Maven
 - Add `Procfile` to specify the application to run the Java application using the assigned PORT 
