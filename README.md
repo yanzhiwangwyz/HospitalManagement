@@ -36,7 +36,7 @@ docker build -t project .
 docker run -p 8080:8080 project 
 ```
 ## Deploy on Render 
-- Add `Dockerfile` to specify environment, specify working directory, and build the application using Maven 
+- Add `renderDockerfile/Dockerfile` to specify environment, specify working directory, and build the application using Maven 
 - [Hospital Management Project](https://hospitalmanagement-wpli.onrender.com/) 
 ## Deploy on Heroku 
 - Add `Dockerfile` to specify environment, specify working directory, and build the application using Maven
